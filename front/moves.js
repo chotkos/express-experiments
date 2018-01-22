@@ -8,7 +8,7 @@ function guid() {
         s4() + '-' + s4() + s4() + s4();
 }
 
-
+var port = process.env.PORT || 3001
 var moves = {};
 moves[37] = 'left';
 moves[39] = 'right';
@@ -23,7 +23,7 @@ $(document).ready(function () {
     }
 
     //var backendUrl = 'https://promisekokos.localtunnel.me';//'http://localhost:3001'
-    var backendUrl = 'http://localhost:3001';
+    var backendUrl = 'http://localhost:'+port;
 
     $.ajax({
         type: "POST",

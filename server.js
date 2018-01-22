@@ -2,6 +2,9 @@ console.log('Starting server...')
 const express = require('express');
 const bodyParser = require('body-parser')
 const app = express();
+
+
+var port = process.env.PORT || 3001
 app.use("/front", express.static(__dirname + "/front/"));
 app.use(bodyParser.urlencoded({
     extended: true
@@ -12,14 +15,10 @@ const MongoClient = require('mongodb').MongoClient;
 MongoClient.connect('mongodb://chotkos:1607Mati@ds117935.mlab.com:17935/express', (err, database) => {
     if (err) return console.log(err)
     db = database.db('express');
-    app.listen(3002, () => {
-        console.log('listening on 3002') 
-
-    })
 })
 
-app.listen(3001, function () {
-    console.log('listening on 3001')
+app.listen(port, function () {
+    console.log('listening on '+port)
 })
 
 app.get('/', (req, res) => {
