@@ -18,7 +18,7 @@ MongoClient.connect('mongodb://chotkos:1607Mati@ds117935.mlab.com:17935/express'
     })
 })
 
-app.listen(80, function () {
+app.listen(3001, function () {
     console.log('listening on 3001')
 })
 
