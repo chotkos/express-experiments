@@ -22,7 +22,8 @@ $(document).ready(function () {
         positionY: 0
     }
 
-    var backendUrl = 'https://promisekokos.localtunnel.me';//'http://localhost:3001'
+    //var backendUrl = 'https://promisekokos.localtunnel.me';//'http://localhost:3001'
+    var backendUrl = 'http://localhost:80';
 
     $.ajax({
         type: "POST",
