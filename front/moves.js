@@ -23,7 +23,7 @@ $(document).ready(function () {
     }
 
     //var backendUrl = 'https://promisekokos.localtunnel.me';//'http://localhost:3001'
-    var backendUrl = 'http://localhost:'+port;
+    var backendUrl = 'http://glacial-mesa-83495.herokuapp.com/:'+port;
 
     $.ajax({
         type: "POST",
