@@ -18,7 +18,7 @@ MongoClient.connect('mongodb://chotkos:1607Mati@ds117935.mlab.com:17935/express'
 })
 
 app.listen(port, function () {
-    console.log('listening on '+port)
+    console.log('listening on ' + port)
 })
 
 app.get('/', (req, res) => {
@@ -50,6 +50,17 @@ var move = function (x, y, guid) {
 
 app.post('/register', (req, res) => {
     console.log('registered user');
+
+    function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+    req.body.color = getRandomColor();
+
     db.collection('players').save(req.body, (err, result) => {
         if (err) return console.log(err);
         console.log('registered to database')
@@ -92,10 +103,10 @@ app.get('/map', (req, res) => {
     var t = [];
     cursor.each(function (err, item) {
         if (item != null) {
-            t.push(item);            
+            t.push(item);
         } else {
-            console.log('sending',t);
+            console.log('sending', t);
             res.jsonp(t);
         }
-    }); 
+    });
 });
