@@ -8,7 +8,7 @@ function guid() {
         s4() + '-' + s4() + s4() + s4();
 }
 
-var port = process.env.PORT || 3001
+var port = 39832;//process.env.PORT || 3001
 var moves = {};
 moves[37] = 'left';
 moves[39] = 'right';
